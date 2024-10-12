@@ -20,7 +20,7 @@ This is a simple e-commerce Flask application that displays product information 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/NirajanMahara/flask-ecommerce.git
+   git clone https://github.com/NirajanMahara/flask_app.git
    cd flask-ecommerce
    ```
 
