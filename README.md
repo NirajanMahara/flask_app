@@ -18,6 +18,11 @@ This is a simple e-commerce Flask application that displays product information 
 <img src="static/images/Screenshot 2024-10-12 at 4.23.33 PM.png" width="250" />
 <img src="static/images/Screenshot 2024-10-12 at 4.26.15 PM.png" width="250" />
 <img src="static/images/Screenshot 2024-10-12 at 4.27.00 PM.png" width="250" />
+<img src="static/images/Screenshot 2024-10-17 at 12.38.37 AM.png" width="750" />
+<img src="static/images/Screenshot 2024-10-17 at 12.35.18 AM.png" width="750" />
+<img src="static/images/Screenshot 2024-10-17 at 12.40.49 AM.png" width="750" />
+
+
 
 ## Setup
 
