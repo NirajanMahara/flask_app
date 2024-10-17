@@ -1,1 +1,3 @@
-MONGODB_URI=mongodb+srv://c0921977:<db_password>@cluster0.iw3gq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+<!-- MONGODB_URI=mongodb+srv://c0921977:<db_password>@cluster0.iw3gq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 -->
+MONGODB_USERNAME=c0921977
+MONGODB_PASSWORD=<db_password>

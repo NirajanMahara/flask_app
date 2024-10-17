@@ -1,3 +1,6 @@
+# CSD-4503-02
+The code base of the course CSD 4503.
+
 # E-Commerce Flask Application
 
 This is a simple e-commerce Flask application that displays product information from a MongoDB Atlas database.
@@ -38,6 +41,11 @@ This is a simple e-commerce Flask application that displays product information 
    ```
 
 4. Set up your MongoDB Atlas database and update the `.env` file with your connection string.
+
+##### Set Up Instructions
+To run the application, you have to create a ".env" file locally.
+This file must include two variables called ```"MONGODB_USERNAME"``` and ```"MONGODB_PASSWORD"```,
+which can be MongoDB Atlas credentials. 
 
 5. Run the application:
    ```

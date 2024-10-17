@@ -7,9 +7,11 @@ from a MongoDB Atlas database. It includes routes for a homepage and a products 
 Author: Nirajan Mahara
 Date: Oct 12, 2024
 """
+# Run this command in the terminal to install flask framework:
+# pip install flask
 
 from flask import Flask, render_template
-from pymongo import MongoClient
+from pymongo import MongoClient # pip install pymongo
 import os
 from dotenv import load_dotenv
 
@@ -19,10 +21,23 @@ load_dotenv()
 # Initialize Flask application
 app = Flask(__name__)
 
-# Setup MongoDB Atlas connection
-client = MongoClient(os.getenv('MONGODB_URI'))
-db = client.get_database('shop_db')  # This will use the database specified in the connection string
-products_collection = db.products
+# Access environment variables
+MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+
+# Construct MongoDB connection string using environment variables
+MONGO_URI = f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.iw3gq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+
+# Initialize MongoDB Atlas Client
+try:
+    client = MongoClient(MONGO_URI)
+    db = client.shop_db  # shop_db is the name of the database in MongoDB Atlas
+    products_collection = db.products #products is the name of the collection inside the database
+    print("MongoDB connection successful!")
+except Exception as e:
+    print(f"Error connecting to MongoDB: {e}")
+
 
 @app.route('/')
 def home():
