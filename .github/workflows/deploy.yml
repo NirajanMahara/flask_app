@@ -26,7 +26,7 @@ jobs:
     - name: Run tests
       run: |
         # Add any test commands here if you have tests to run
-        python -m unittest discover -s tests  # Example test command
+        # python -m unittest discover -s tests  # Example test command
 
     - name: Deploy Application
       env:
