@@ -5,7 +5,7 @@ This script runs a Flask web application that displays product information
 from a MongoDB Atlas database. It includes routes for a homepage and a products page.
 
 Author: Nirajan Mahara
-Date: Oct 12, 2024
+Date: Oct 19, 2024
 """
 # Run this command in the terminal to install flask framework:
 # pip install flask
