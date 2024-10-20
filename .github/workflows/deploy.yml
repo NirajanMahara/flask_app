@@ -1,0 +1,36 @@
+name: Deploy Flask Application
+
+on:
+  push:
+    branches:
+      - main  # Runs the workflow when code is pushed to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        # Add any test commands here if you have tests to run
+        python -m unittest discover -s tests  # Example test command
+
+    - name: Deploy Application
+      env:
+        MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}  # Fetch username from GitHub Secrets
+        MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}  # Fetch password from GitHub Secrets
+      run: |
+        python app.py  # Modify this if you have a different deployment command
