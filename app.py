@@ -5,7 +5,7 @@ This script runs a Flask web application that displays product information
 from a MongoDB Atlas database. It includes routes for a homepage and a products page.
 
 Author: Nirajan Mahara
-Date: Oct 19, 2024
+Date: Nov 16, 2024
 """
 # Run this command in the terminal to install flask framework:
 # pip install flask
@@ -18,15 +18,18 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Access environment variables
+MONGO_URI = os.getenv('MONGODB_URI')  # from the .env file
+
 # Initialize Flask application
 app = Flask(__name__)
 
-# Access environment variables
-MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
-MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+# # Access environment variables
+# MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+# MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
 
-# Construct MongoDB connection string using environment variables
-MONGO_URI = f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.iw3gq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+# # Construct MongoDB connection string using environment variables
+# MONGO_URI = f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.iw3gq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 
 # Initialize MongoDB Atlas Client
@@ -38,7 +41,7 @@ try:
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
 
-
+# Define routes
 @app.route('/')
 def home():
     """Route for the homepage."""
