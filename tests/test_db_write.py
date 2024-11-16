@@ -1,5 +1,16 @@
 from pymongo import MongoClient
 import pytest
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# MongoDB URI from environment
+MONGO_URI = os.getenv('MONGODB_URI')
+
+# Optionally, print to ensure the values are loaded
+print("MONGO_URI:", os.getenv('MONGODB_URI'))
 
 def test_mongodb_write():
     """Test inserting a document into the products collection."""
