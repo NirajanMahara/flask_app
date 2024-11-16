@@ -32,6 +32,7 @@ jobs:
     - name: Debug Mongo URI
       run: |
         echo "Mongo URI: $MONGODB_URI"
+        env
 
     - name: Run tests
       env:
