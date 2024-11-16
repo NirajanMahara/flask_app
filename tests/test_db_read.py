@@ -11,22 +11,17 @@ load_dotenv()
 MONGO_URI = os.getenv('MONGODB_URI')
 
 # Optionally, print to ensure the values are loaded
-print("MONGO_URI:", os.getenv('MONGODB_URI'))
-
-
-# @pytest.fixture(scope='module')
-# def mongodb_client():
-#     """Fixture to set up MongoDB client."""
-#     client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
-#     yield client
-#     client.close()
+print("MONGO_URI:", MONGO_URI)
 
 def test_mongodb_connection():
     """Test MongoDB connection using the ping command."""
-    from app import MONGO_URI
     try:
+        # Connect to MongoDB with a timeout of 5 seconds
         client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
-        client.admin.command('ping')  # Ping MongoDB
+        
+        # Ping MongoDB server
+        client.admin.command('ping')
+        
         print("MongoDB connection successful!")
     except ServerSelectionTimeoutError:
         pytest.fail("MongoDB connection failed: Server not reachable or invalid URI")
