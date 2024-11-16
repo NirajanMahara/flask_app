@@ -38,6 +38,9 @@ updated preview & the script to add the data to MongoDB
 <img src="static/images/Screenshot 2024-11-16 at 4.51.17 PM.png" width="250" />
 <img src="static/images/Screenshot 2024-11-16 at 4.53.34 PM.png" width="250" />
 
+Flask CI/CD pipeline run tests completed successfully
+<img src="static/images/ci-test complete Screenshot 2024-11-16 at 5.16.37 PM.png" width="750" />
+
 ## Setup
 
 To run this application locally, follow these steps:
